@@ -3,8 +3,8 @@ Title: Extract Colours For Data Visualization
 Version: 0.0.0.9000
 Authors@R: 
     person("Shaun", "Hutchinson", , "shaunhutch@shaw.ca", role = c("aut", "cre"))
-    person("Alex", "Taciuk", , "first.last@example.com", role = c("aut", "cre"))
-    person("Arjun", "Radhakrishnan", , "first.last@example.com", role = c("aut", "cre"))
+    person("Alex", "Taciuk", , "ataciuk@gmail.com", role = c("aut", "cre"))
+    person("Arjun", "Radhakrishnan", , "rkrishnan.arjun@gmail.com", role = c("aut", "cre"))
     person("Lauren", "Zung", , "laurenzung@gmail.com", role = c("aut", "cre"))
 Description: A package that can be used to extract colours from images for use in data visualization projects.
 License: MIT + file LICENSE
