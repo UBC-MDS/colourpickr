@@ -1,2 +1,6 @@
 ^colourpickr\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
+^CODE_OF_CONDUCT\.md$
+^\.github$
+^README\.Rmd$
