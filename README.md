@@ -78,3 +78,17 @@ based on a dataset of the users choosing.
 most common colours from an image (via URL) and inverts them to retrieve
 the negative version of a colour palette, returning the associated HEX
 codes and RGB values for each colour.
+
+## Contributing
+
+Interested in contributing? Check out the [contributing
+guidelines](https://github.com/UBC-MDS/colourpickr/blob/master/.github/CONTRIBUTING.md).
+Please note that this project is released with a [Code of
+Conduct](https://github.com/UBC-MDS/colourpickr/blob/master/CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
+
+## License
+
+`colourpycker` was created by Shaun Hutchinson, Arjun Radhakrishnan,
+Alex Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
+license.
