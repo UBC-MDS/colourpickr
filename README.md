@@ -1,12 +1,47 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# colourpickr
-
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of colourpickr is to …
+# colourpickr
+
+A Python package that can be used to extract colours from images for use
+in data visualization projects.
+
+## Overview
+
+This package allows users to integrate unique colour palettes into their
+graphs for exploratory data analysis. The colours are retrieved from
+image data (via URL) and are selected based on their overall prominence
+in a picture. While there are existing tools that are used to process
+images and create figures independently, we aim to combine both of their
+functionalities to help programmers easily design effective and creative
+visualizations.
+
+## Where Our Package Fits
+
+There does exist similar functions in R that provide similar
+functionality to our package. packages are capable of colour extraction
+and data visualization, but none exist that combine the two functions to
+our knowledge. Some examples of such packages are as follows:
+
+[Magick](https://docs.ropensci.org/magick/articles/intro.html): This
+allows you to extract the colours of the image and the quantity of each
+colour in the image. However, this does not convert this into a colour
+palette, nor does this package have data visualization capabilities
+built in. [Colorfindr](https://github.com/zumbov2/colorfindr): This
+again, allows you to extract the colours of the image and the quantity
+of each colour in the image. However, this does not convert this into a
+colour palette, nor does this package have data visualization
+capabilities built in.
+[paletteR](https://github.com/AndreaCirilloAC/paletter): This package
+allows you to create a colour palette from an image. However, this image
+must be saved locally, not from a URL, and requires you to call GGPlot
+or anothe package to graph.
+[Imgpalr](https://github.com/leonawicz/imgpalr): This package allows you
+to create ualitative, sequential or divergent color palettes from an
+image. Again, this function does not have data visualization built in to
+it.
 
 ## Installation
 
@@ -17,39 +52,3 @@ You can install the development version of colourpickr from
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/colourpickr")
 ```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(colourpickr)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
