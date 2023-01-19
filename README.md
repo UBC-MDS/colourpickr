@@ -56,3 +56,25 @@ You can install the development version of colourpickr from
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/colourpickr")
 ```
+
+## Functions
+
+`get_color_palette(img_url, tolerance, limit)`: This function extracts
+the most common colors from an image and returns them as a data frame of
+hex color codes and RGB values. The user is provided with the ability to
+set tolerance while picking colors, along with the number of colors that
+should be returned.
+
+`donut(img_url, num_clrs, img_size)`: This function creates a donut
+chart with information on the most common colors in the linked image.
+The user specifies the image, the number of colors, and specifies the
+size of the resulting chart.
+
+`scatterplot(url_img, dataset, x, y, colour, tolerance)`: This function
+creates a simple scatterplot using the colours select from the image
+based on a dataset of the users choosing.
+
+`negative(img_url, num_colours, tolerance)`: This function extracts the
+most common colours from an image (via URL) and inverts them to retrieve
+the negative version of a colour palette, returning the associated HEX
+codes and RGB values for each colour.
