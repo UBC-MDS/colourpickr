@@ -25,23 +25,27 @@ functionality to our package. packages are capable of colour extraction
 and data visualization, but none exist that combine the two functions to
 our knowledge. Some examples of such packages are as follows:
 
-[Magick](https://docs.ropensci.org/magick/articles/intro.html): This
-allows you to extract the colours of the image and the quantity of each
-colour in the image. However, this does not convert this into a colour
-palette, nor does this package have data visualization capabilities
-built in. [Colorfindr](https://github.com/zumbov2/colorfindr): This
-again, allows you to extract the colours of the image and the quantity
-of each colour in the image. However, this does not convert this into a
-colour palette, nor does this package have data visualization
-capabilities built in.
-[paletteR](https://github.com/AndreaCirilloAC/paletter): This package
-allows you to create a colour palette from an image. However, this image
-must be saved locally, not from a URL, and requires you to call GGPlot
-or anothe package to graph.
-[Imgpalr](https://github.com/leonawicz/imgpalr): This package allows you
-to create ualitative, sequential or divergent color palettes from an
-image. Again, this function does not have data visualization built in to
-it.
+- [Magick](https://docs.ropensci.org/magick/articles/intro.html): This
+  allows you to extract the colours of the image and the quantity of
+  each colour in the image. However, this does not convert this into a
+  colour palette, nor does this package have data visualization
+  capabilities built in.
+
+- [Colorfindr](https://github.com/zumbov2/colorfindr): This again,
+  allows you to extract the colours of the image and the quantity of
+  each colour in the image. However, this does not convert this into a
+  colour palette, nor does this package have data visualization
+  capabilities built in.
+
+- [paletteR](https://github.com/AndreaCirilloAC/paletter): This package
+  allows you to create a colour palette from an image. However, this
+  image must be saved locally, not from a URL, and requires you to call
+  GGPlot or anothe package to graph.
+
+- [Imgpalr](https://github.com/leonawicz/imgpalr): This package allows
+  you to create ualitative, sequential or divergent color palettes from
+  an image. Again, this function does not have data visualization built
+  in to it.
 
 ## Installation
 
