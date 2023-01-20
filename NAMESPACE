@@ -3,4 +3,5 @@
 export(negative)
 import(colorfindr)
 import(tidyverse)
+export(donut)
 export(scatterplot)
