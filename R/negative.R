@@ -4,9 +4,6 @@
 #' (e.g. red becomes cyan, green becomes magenta, yellow becomes blue)
 #' then stored in a table as HEX codes and RGB values.
 #'
-#' @import tidyverse
-#' @import colorfindr
-#'
 #' @param img_url URL of an image file
 #' @param num_colours number of colours to be extracted
 #' @param threshold minimum share of all pixels; between 0 and 1
