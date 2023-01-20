@@ -1,12 +1,51 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# colourpickr
-
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of colourpickr is to …
+# colourpickr
+
+A Python package that can be used to extract colours from images for use
+in data visualization projects.
+
+## Overview
+
+This package allows users to integrate unique colour palettes into their
+graphs for exploratory data analysis. The colours are retrieved from
+image data (via URL) and are selected based on their overall prominence
+in a picture. While there are existing tools that are used to process
+images and create figures independently, we aim to combine both of their
+functionalities to help programmers easily design effective and creative
+visualizations.
+
+## Where Our Package Fits
+
+There does exist similar functions in R that provide similar
+functionality to our package. packages are capable of colour extraction
+and data visualization, but none exist that combine the two functions to
+our knowledge. Some examples of such packages are as follows:
+
+- [Magick](https://docs.ropensci.org/magick/articles/intro.html): This
+  allows you to extract the colours of the image and the quantity of
+  each colour in the image. However, this does not convert this into a
+  colour palette, nor does this package have data visualization
+  capabilities built in.
+
+- [Colorfindr](https://github.com/zumbov2/colorfindr): This again,
+  allows you to extract the colours of the image and the quantity of
+  each colour in the image. However, this does not convert this into a
+  colour palette, nor does this package have data visualization
+  capabilities built in.
+
+- [paletteR](https://github.com/AndreaCirilloAC/paletter): This package
+  allows you to create a colour palette from an image. However, this
+  image must be saved locally, not from a URL, and requires you to call
+  GGPlot or anothe package to graph.
+
+- [Imgpalr](https://github.com/leonawicz/imgpalr): This package allows
+  you to create ualitative, sequential or divergent color palettes from
+  an image. Again, this function does not have data visualization built
+  in to it.
 
 ## Installation
 
@@ -18,38 +57,38 @@ You can install the development version of colourpickr from
 devtools::install_github("UBC-MDS/colourpickr")
 ```
 
-## Example
+## Functions
 
-This is a basic example which shows you how to solve a common problem:
+`get_color_palette(img_url, tolerance, limit)`: This function extracts
+the most common colors from an image and returns them as a data frame of
+hex color codes and RGB values. The user is provided with the ability to
+set tolerance while picking colors, along with the number of colors that
+should be returned.
 
-``` r
-library(colourpickr)
-## basic example code
-```
+`donut(img_url, num_clrs, img_size)`: This function creates a donut
+chart with information on the most common colors in the linked image.
+The user specifies the image, the number of colors, and specifies the
+size of the resulting chart.
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+`scatterplot(url_img, dataset, x, y, colour, tolerance)`: This function
+creates a simple scatterplot using the colours select from the image
+based on a dataset of the users choosing.
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+`negative(img_url, num_colours, tolerance)`: This function extracts the
+most common colours from an image (via URL) and inverts them to retrieve
+the negative version of a colour palette, returning the associated HEX
+codes and RGB values for each colour.
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+## Contributing
 
-You can also embed plots, for example:
+Interested in contributing? Check out the [contributing
+guidelines](https://github.com/UBC-MDS/colourpickr/blob/master/.github/CONTRIBUTING.md).
+Please note that this project is released with a [Code of
+Conduct](https://github.com/UBC-MDS/colourpickr/blob/master/CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+## License
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+`colourpycker` was created by Shaun Hutchinson, Arjun Radhakrishnan,
+Alex Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
+license.
