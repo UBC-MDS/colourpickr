@@ -70,7 +70,7 @@ chart with information on the most common colors in the linked image.
 The user specifies the image, the number of colors, and specifies the
 size of the resulting chart.
 
-`scatterplot(url_img, dataset, x, y, colour, tolerance)`: This function
+`scatterplot(url_img, dataset, x, y, colour, threshold)`: This function
 creates a simple scatterplot using the colours select from the image
 based on a dataset of the users choosing.
 
