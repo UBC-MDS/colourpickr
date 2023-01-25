@@ -3,6 +3,5 @@
 export(donut)
 export(get_color_palette)
 export(negative)
+export(rgb2col)
 export(scatterplot)
-import(colorfindr)
-import(tidyverse)

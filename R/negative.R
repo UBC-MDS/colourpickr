@@ -34,11 +34,14 @@ negative <- function(img_url, num_colours, threshold = 0) {
   if (dim(color_tib)[1] == 0)
     stop("Share of pixels of the most common colour is lower than the threshold; set a lower 'threshold' to extract.")
 
-  # Convert HEX code tibble to vector
-  hex <- dplyr::pull(color_tib, col_hex)
+  # Get HEX code column as vector
+  hex <- color_tib |> dplyr::pull(col_hex)
 
-  # Extract RGB
-  rgb <- col2rgb(hex)
+  # Extract inverted RGB codes from HEX codes
+  rgb <- abs(255 - grDevices::col2rgb(hex))
+
+  # Convert inverted RGB codes back to HEX code
+  inverted_hex <- sapply(1:ncol(rgb), function(x) rgb2col(rgb, x))
 
   # Transpose RGB matrix
   rgb <- t(rgb)
@@ -47,7 +50,27 @@ negative <- function(img_url, num_colours, threshold = 0) {
   hex_rgb <- tibble::as_tibble(rgb)
 
   # Add HEX codes
-  hex_rgb$hex <- hex
+  hex_rgb$hex <- inverted_hex
 
-  return(hex_rgb)
+  # Return final tibble
+  hex_rgb
+}
+
+
+#' Converts a column of RGB values to a HEX code
+#' Based on: https://stackoverflow.com/a/66810164
+#'
+#' @param mat matrix of RGB color codes
+#' @param col index of column containing RGB values; row order is red, green, blue
+#'
+#' @return character vector of the HEX code
+#' @export
+#'
+#' @examples
+#' rgb2col(grDevices::col2rgb(c("#000C1C")))
+rgb2col <- function(mat, col) {
+  grDevices::rgb(mat[1, col],
+      mat[2, col],
+      mat[3, col],
+      maxColorValue = 255)
 }

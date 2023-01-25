@@ -18,5 +18,4 @@ Imports:
     tibble,
     dplyr,
     colorfindr,
-    tidyverse,
     stringr
