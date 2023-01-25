@@ -30,7 +30,7 @@ scatterplot <- function(img_url, dataset, x, y, colour, threshold = 0) {
 
   # Get colour palatte based on number of colours in dataset
   colour_palatte <- get_color_palette(img_url,
-                                      tolerance,
+                                      threshold,
                                       n_distinct(select(dataset, {{colour}})))
 
   # Build scatterplot based off of image colour palatte and dataset

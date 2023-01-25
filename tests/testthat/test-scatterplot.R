@@ -20,14 +20,14 @@ test_that('Output plot should use geom_point', {
 test_that('Output plot should use correct mappings for x, y and color', {
   expect_true("x"  == rlang::get_expr(test_plot$mapping$x))
   expect_true("y" == rlang::get_expr(test_plot$mapping$y))
-  expect_true("fill" == rlang::get_expr(scatter$mapping$colour))
+  expect_true("fill" == rlang::get_expr(test_plot$mapping$colour))
 })
 
 # test scatter for correct labels
 test_that('Output plot should use correct mappings for x, y and color', {
   expect_true("x"  == rlang::get_expr(test_plot$labels$x))
   expect_true("y" == rlang::get_expr(test_plot$labels$y))
-  expect_true("fill" == rlang::get_expr(scatter$labels$colour))
+  expect_true("fill" == rlang::get_expr(test_plot$labels$colour))
 })
 
 # scatter raises an error where expected
