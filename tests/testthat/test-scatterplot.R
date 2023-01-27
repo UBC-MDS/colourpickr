@@ -5,7 +5,7 @@ test_df <- tibble(
   fill = c("A", "B", "C", "A", "B", "C", "A", "B", "C"))
 
 # create test plot
-test_plot <- scatterplot('https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg',
+test_plot <- scatterplot('https://i.imgur.com/s9egWBB.jpg',
                          test_df,
                          x,
                          y,
@@ -36,7 +36,7 @@ test_that("scatterplot() raises an error where expected", {
                            x,
                            y,
                            fill))
-  expect_error('https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg',
+  expect_error('https://i.imgur.com/s9egWBB.jpg',
                test_df,
                x,
                y,
