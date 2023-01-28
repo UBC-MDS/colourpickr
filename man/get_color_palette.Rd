@@ -2,9 +2,9 @@
 % Please edit documentation in R/get_color_palette.R
 \name{get_color_palette}
 \alias{get_color_palette}
-\title{Gets the color palette of an image}
+\title{Gets the color palette of an image as a tibble}
 \usage{
-get_color_palette(img_url, tolerance, limit)
+get_color_palette(img_url, tolerance, limit, force_return_limit = FALSE)
 }
 \arguments{
 \item{img_url}{a character string representing the image URL}
@@ -12,6 +12,8 @@ get_color_palette(img_url, tolerance, limit)
 \item{tolerance}{numeric tolerance level between 0 and 1 for color matching}
 
 \item{limit}{the maximum number of colors to be returned}
+
+\item{force_return_limit}{forcefully update tolerance until limit number of colors are extracted}
 }
 \value{
 data.frame (tibble::tibble)
@@ -23,5 +25,5 @@ color codes and RGB values
 }
 \examples{
 url <- "https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg"
-get_color_palette(url, 20, 5)
+get_color_palette(url, 0.001, 3, TRUE)
 }
