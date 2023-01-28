@@ -14,7 +14,9 @@
 #' @return A geom_point ggplot
 #' @export
 #'
-#' @examples scatterplot('https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg', penguins, bill_length_mm, body_mass_g, species, 50)
+#' @examples scatterplot('https://i.imgur.com/s9egWBB.jpg',
+#' palmerpenguins::penguins,
+#' bill_length_mm, body_mass_g, species, 0)
 scatterplot <- function(img_url, dataset, x, y, colour, threshold = 0) {
   if(!startsWith(img_url, 'https://')){
     stop("'img_url' must be a link (not a path).")
@@ -31,14 +33,14 @@ scatterplot <- function(img_url, dataset, x, y, colour, threshold = 0) {
   # Get colour palatte based on number of colours in dataset
   colour_palatte <- get_color_palette(img_url,
                                       threshold,
-                                      n_distinct(select(dataset, {{colour}})))
+                                      dplyr::n_distinct(dplyr::select(dataset, {{colour}})))
 
   # Build scatterplot based off of image colour palatte and dataset
-  scatter <- ggplot(data = dataset,
-         aes(x = {{x}},
+  scatter <- ggplot2::ggplot(data = dataset,
+                             ggplot2::aes(x = {{x}},
              y = {{y}},
              color = {{colour}})) +
-    scale_color_manual(colour_palatte$HEX) +
-    geom_point()
+    ggplot2::scale_color_manual(values = colour_palatte$hex) +
+    ggplot2::geom_point()
 
 }

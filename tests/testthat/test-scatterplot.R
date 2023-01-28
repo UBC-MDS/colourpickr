@@ -1,5 +1,5 @@
 # Create test data frame
-test_df <- tibble(
+test_df <- dplyr::tibble(
   x = c(1.1, 1.3, 2.4, 1.5, 1.9, 2.1, 2.1, 0.9, 3.1),
   y = c(6.8, 7.2, 9.4, 8.3, 5.4, 9.6, 2.9, 6.6, 4.3),
   fill = c("A", "B", "C", "A", "B", "C", "A", "B", "C"))
@@ -36,11 +36,11 @@ test_that("scatterplot() raises an error where expected", {
                            x,
                            y,
                            fill))
-  expect_error('https://i.imgur.com/s9egWBB.jpg',
+  expect_error(scatterplot('https://i.imgur.com/s9egWBB.jpg',
                test_df,
                x,
                y,
                fill,
-               "15")
+               "15"))
 }
 )
