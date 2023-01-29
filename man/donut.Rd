@@ -4,14 +4,16 @@
 \alias{donut}
 \title{Create a donut chart of the top n colors in the image (number of colors specified by the user)}
 \usage{
-donut(img_url, num_clrs, img_size)
+donut(img_url, num_clrs, tolerance = 0.001, plot_show = TRUE)
 }
 \arguments{
 \item{img_url}{string of the url of the image that you want to pull colors from}
 
 \item{num_clrs}{int of the number of colors you want to pull from the image}
 
-\item{img_size}{int of the pixel width and height of the resulting chart. Note that it will return a square}
+\item{tolerance}{float of tolerance between 0 and 1 for color matching, default 0.001}
+
+\item{plot_show}{if TRUE will print the plot, default TRUE}
 }
 \value{
 a ggplot donut chart of the n most common colors in the image (user specified)
