@@ -17,6 +17,7 @@ negative(img_url, num_colours, threshold = 0)
 data.frame (tibble::tibble)
 }
 \description{
+Colours are extracted from an image via URL and reversed,
 (e.g. red becomes cyan, green becomes magenta, yellow becomes blue)
 then stored in a table as HEX codes and RGB values.
 }
