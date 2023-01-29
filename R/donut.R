@@ -9,11 +9,14 @@
 #' @export
 #'
 #' @examples
-#' donut('https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg', 5, 400)
+#' donut('https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg', 5, 0.001)
 donut <- function(img_url, num_clrs, tolerance=0.001, plot_show=TRUE) {
-  df <- get_color_palette(img_url, tolerance=tolerance, 100, TRUE)
-  df <- df |> dplyr::select(hex, col_share) |>
+  color_df <- get_color_palette(img_url, tolerance=tolerance, 100, TRUE)
+
+  df <- color_df |>
+    dplyr::select(hex, col_share) |>
     dplyr::rename(prop = col_share, colors = hex)
+
   df$category <- df$colors
   df <- head(df, num_clrs)
   df <- df |> dplyr::mutate(prop = prop/sum(df$prop))
