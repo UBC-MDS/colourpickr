@@ -74,7 +74,7 @@ size of the resulting chart.
 creates a simple scatterplot using the colours select from the image
 based on a dataset of the users choosing.
 
-`negative(img_url, num_colours, tolerance)`: This function extracts the
+`negative(img_url, num_colours, threshold)`: This function extracts the
 most common colours from an image (via URL) and inverts them to retrieve
 the negative version of a colour palette, returning the associated HEX
 codes and RGB values for each colour.
@@ -89,6 +89,6 @@ By contributing to this project, you agree to abide by its terms.
 
 ## License
 
-`colourpycker` was created by Shaun Hutchinson, Arjun Radhakrishnan,
+`colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan,
 Alex Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
 license.
