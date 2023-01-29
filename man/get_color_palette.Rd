@@ -12,6 +12,7 @@ get_color_palette(img_url, tolerance, limit, force_return_limit = FALSE)
 \item{tolerance}{numeric tolerance level between 0 and 1 for color matching}
 
 \item{limit}{the maximum number of colors to be returned}
+
 \item{force_return_limit}{forcefully update tolerance until limit number of colors are extracted}
 }
 \value{
