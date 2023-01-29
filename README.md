@@ -50,7 +50,7 @@ our knowledge. Some examples of such packages are as follows:
 ## Installation
 
 You can install the development version of colourpickr from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/UBC-MDS/colourpickr) with:
 
 ``` r
 # install.packages("devtools")
@@ -59,7 +59,7 @@ devtools::install_github("UBC-MDS/colourpickr")
 
 ## Functions
 
-`get_color_palette(img_url, tolerance, limit)`: This function extracts
+`get_color_palette(img_url, tolerance, limit, force_return_limit = FALSE)`: This function extracts
 the most common colors from an image and returns them as a data frame of
 hex color codes and RGB values. The user is provided with the ability to
 set tolerance while picking colors, along with the number of colors that
@@ -67,7 +67,7 @@ should be returned.
 
 `donut(img_url, num_clrs, tolerance, plot_show)`: This function creates a donut
 chart with information on the most common n colors in the linked image, where n
-is the number of colors specified by the user. The user also specifies the 
+is the number of colors specified by the user. The user also specifies the
 image url and the color tolerance.
 
 `scatterplot(url_img, dataset, x, y, colour, threshold)`: This function

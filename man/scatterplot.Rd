@@ -27,7 +27,9 @@ Creates a simple scatterplot using the colours selected from the image,
 plotting two features from a dataset of the users choosing.
 }
 \examples{
-scatterplot('https://i.imgur.com/s9egWBB.jpg',
-palmerpenguins::penguins,
-bill_length_mm, body_mass_g, species, 0)
+scatterplot(
+  "https://i.imgur.com/s9egWBB.jpg",
+  palmerpenguins::penguins,
+  bill_length_mm, body_mass_g, species, 0
+)
 }
