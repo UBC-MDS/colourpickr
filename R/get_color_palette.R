@@ -101,5 +101,7 @@ get_color_palette <- function(img_url, tolerance, limit, force_return_limit = FA
 
   hex_rgb$hex <- hex
 
+  hex_rgb$col_share <- color_tib$col_share
+
   hex_rgb
 }
