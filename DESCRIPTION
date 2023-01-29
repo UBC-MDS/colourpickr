@@ -15,12 +15,13 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
+    tibble,
+    tidyverse,
     colorfindr,
-    dplyr,
+    stringr,
     ggplot2,
     grDevices,
     httr,
     palmerpenguins,
     rlang,
-    stringr,
-    tibble
+    dplyr

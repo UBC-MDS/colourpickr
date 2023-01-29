@@ -4,14 +4,14 @@
 \alias{negative}
 \title{Invert top n colours in an image file.}
 \usage{
-negative(img_url, num_colours, threshold)
+negative(img_url, num_colours, threshold = 0)
 }
 \arguments{
 \item{img_url}{URL of an image file}
 
 \item{num_colours}{number of colours to be extracted}
 
-\item{threshold}{minimum share of all pixels; between 0 and 1}
+\item{threshold}{minimum share of all pixels; between 0 and 1; 0 by default}
 }
 \value{
 data.frame (tibble::tibble)
@@ -21,6 +21,6 @@ data.frame (tibble::tibble)
 then stored in a table as HEX codes and RGB values.
 }
 \examples{
-url <- "https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg"
-negative(url, 3, 0.2)
+url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
+negative(url, 3, 0.001)
 }

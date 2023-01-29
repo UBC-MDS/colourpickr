@@ -3,5 +3,6 @@
 export(donut)
 export(get_color_palette)
 export(negative)
+export(rgb2col)
 export(scatterplot)
 export(url_exists)
