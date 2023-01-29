@@ -1,6 +1,6 @@
 #' Invert top n colours in an image file.
 #'
-# Colours are extracted from an image via URL and reversed,
+#' Colours are extracted from an image via URL and reversed,
 #' (e.g. red becomes cyan, green becomes magenta, yellow becomes blue)
 #' then stored in a table as HEX codes and RGB values.
 #'
