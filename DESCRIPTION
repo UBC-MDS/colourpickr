@@ -10,12 +10,18 @@ Description: A package that can be used to extract colours from images for use i
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
     tibble,
-    dplyr,
+    tidyverse,
     colorfindr,
-    stringr
+    stringr,
+    ggplot2,
+    grDevices,
+    httr,
+    palmerpenguins,
+    rlang,
+    dplyr
