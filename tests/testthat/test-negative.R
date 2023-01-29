@@ -1,13 +1,15 @@
 # Test negative
-url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
-example <- dplyr::tibble(red = c(255, 252, 243, 243, 254),
-                  green = c(243, 243, 240, 239, 250),
-                  blue = c(227, 228, 225, 227, 238),
-                  hex = c("#FFF3E3", "#FCF3E4", "#F3F0E1", "#F3EFE3", "#FEFAEE"))
+url <- "https://i.imgur.com/s9egWBB.jpg"
+example <- dplyr::tibble(
+  red = c(255, 252, 243, 243, 254),
+  green = c(243, 243, 240, 239, 250),
+  blue = c(227, 228, 225, 227, 238),
+  hex = c("#FFF3E3", "#FCF3E4", "#F3F0E1", "#F3EFE3", "#FEFAEE")
+)
 
 test_that("negative() throws an error when expected", {
-  expect_error(negative(url, 'a', 0.4))
-  expect_error(negative(url, 5, '0.001'))
+  expect_error(negative(url, "a", 0.4))
+  expect_error(negative(url, 5, "0.001"))
   expect_error(negative(url, 4, 8))
   expect_error(negative(url, 10, -3.9))
   expect_error(negative("image.png", 5, 0.001))

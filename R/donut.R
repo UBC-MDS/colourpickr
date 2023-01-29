@@ -9,30 +9,30 @@
 #' @export
 #'
 #' @examples
-#' donut('https://i.imgur.com/s9egWBB.jpg', 5, 0.0005)
-donut <- function(img_url, num_clrs, tolerance=0.001, plot_show=TRUE) {
-  #download the dataframe of colors
-  df <- get_color_palette(img_url, tolerance=tolerance, 100, TRUE)
+#' donut("https://i.imgur.com/s9egWBB.jpg", 5, 0.0005)
+donut <- function(img_url, num_clrs, tolerance = 0.001, plot_show = TRUE) {
+  # download the dataframe of colors
+  df <- get_color_palette(img_url, tolerance = tolerance, 100, TRUE)
 
-  #select and rename the needed columns
+  # select and rename the needed columns
   df <- df[c("hex", "col_share")] |>
     dplyr::rename(prop = col_share, colors = hex)
 
-  #add the category column and truncate df to num_clrs
+  # add the category column and truncate df to num_clrs
   df$category <- df$colors
   df <- head(df, num_clrs)
-  df <- df |> dplyr::mutate(prop = prop/sum(df$prop))
+  df <- df |> dplyr::mutate(prop = prop / sum(df$prop))
 
-  #code for the labels
-  df$ymax = cumsum(df$prop)
-  df$ymin = c(0, head(df$ymax, n = -1))
+  # code for the labels
+  df$ymax <- cumsum(df$prop)
+  df$ymin <- c(0, head(df$ymax, n = -1))
   df$labelPosition <- (df$ymax + df$ymin) / 2
   df$label <- paste0(df$category, ": \n", round(df$prop * 100, 1), "%")
   col <- as.character(df$colors)
   names(col) <- as.character(df$category)
 
-  #create the ggplot object with labels
-  donut_plot <- ggplot2::ggplot(df, aes(ymax = ymax, ymin = ymin, xmax = 3, xmin = 2, fill = colors)) +
+  # create the ggplot object with labels
+  donut_plot <- ggplot2::ggplot(df, ggplot2::aes(ymax = ymax, ymin = ymin, xmax = 3, xmin = 2, fill = colors)) +
     ggplot2::geom_rect() +
     ggplot2::geom_text(x = 4, ggplot2::aes(y = labelPosition, label = label, color = colors), size = 3, hjust = 0.5) + # x here controls label position (inner / outer)
     ggplot2::scale_fill_manual(values = col) +
@@ -42,8 +42,8 @@ donut <- function(img_url, num_clrs, tolerance=0.001, plot_show=TRUE) {
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none")
 
-  #have option to not print the ggplot for testing
-  if (plot_show){
+  # have option to not print the ggplot for testing
+  if (plot_show) {
     print(donut_plot)
   }
   return(donut_plot)

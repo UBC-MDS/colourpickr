@@ -37,7 +37,7 @@ url_exists <- function(url) {
 #' @export
 #'
 #' @examples
-#' url <- "https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg"
+#' url <- "https://i.imgur.com/s9egWBB.jpg"
 #' get_color_palette(url, 0.001, 3, TRUE)
 get_color_palette <- function(img_url, tolerance, limit, force_return_limit = FALSE) {
   # check if image exists
@@ -64,8 +64,8 @@ get_color_palette <- function(img_url, tolerance, limit, force_return_limit = FA
 
   # Extract colors
   color_tib <- colorfindr::get_colors(img_url,
-                                      top_n = limit,
-                                      min_share = tolerance, exclude_col = "white", get_stats = TRUE
+    top_n = limit,
+    min_share = tolerance, exclude_col = "white", get_stats = TRUE
   )
 
   if (!force_return_limit) {
