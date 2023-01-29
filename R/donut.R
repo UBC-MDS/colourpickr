@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' donut('https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg', 5, 0.001)
+#' donut('https://i.imgur.com/s9egWBB.jpg', 5, 0.0005)
 donut <- function(img_url, num_clrs, tolerance=0.001, plot_show=TRUE) {
   #download the dataframe of colors
   df <- get_color_palette(img_url, tolerance=tolerance, 100, TRUE)
@@ -32,15 +32,15 @@ donut <- function(img_url, num_clrs, tolerance=0.001, plot_show=TRUE) {
   names(col) <- as.character(df$category)
 
   #create the ggplot object with labels
-  donut_plot <- ggplot(df, aes(ymax = ymax, ymin = ymin, xmax = 3, xmin = 2, fill = colors)) +
-    geom_rect() +
-    geom_text(x = 4, aes(y = labelPosition, label = label, color = colors), size = 3, hjust = 0.5) + # x here controls label position (inner / outer)
-    scale_fill_manual(values = col) +
-    scale_color_manual(values = col) +
-    coord_polar(theta = "y", clip = "off") +
-    xlim(c(-1, 4)) +
-    theme_void() +
-    theme(legend.position = "none")
+  donut_plot <- ggplot2::ggplot(df, aes(ymax = ymax, ymin = ymin, xmax = 3, xmin = 2, fill = colors)) +
+    ggplot2::geom_rect() +
+    ggplot2::geom_text(x = 4, ggplot2::aes(y = labelPosition, label = label, color = colors), size = 3, hjust = 0.5) + # x here controls label position (inner / outer)
+    ggplot2::scale_fill_manual(values = col) +
+    ggplot2::scale_color_manual(values = col) +
+    ggplot2::coord_polar(theta = "y", clip = "off") +
+    ggplot2::xlim(c(-1, 4)) +
+    ggplot2::theme_void() +
+    ggplot2::theme(legend.position = "none")
 
   #have option to not print the ggplot for testing
   if (plot_show){
