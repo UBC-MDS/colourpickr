@@ -22,5 +22,5 @@ a ggplot donut chart of the n most common colors in the image (user specified)
 Create a donut chart of the top n colors in the image (number of colors specified by the user)
 }
 \examples{
-donut('https://i.imgur.com/s9egWBB.jpg', 5, 0.0005)
+donut("https://i.imgur.com/s9egWBB.jpg", 5, 0.0005)
 }

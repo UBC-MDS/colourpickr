@@ -1,5 +1,5 @@
 # Test negative
-url <- "https://i.imgur.com/s9egWBB.jpg"
+url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
 example <- dplyr::tibble(
   red = c(255, 252, 243, 243, 254),
   green = c(243, 243, 240, 239, 250),

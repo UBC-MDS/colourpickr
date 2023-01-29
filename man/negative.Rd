@@ -22,6 +22,6 @@ Colours are extracted from an image via URL and reversed,
 then stored in a table as HEX codes and RGB values.
 }
 \examples{
-url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
+url <- "https://i.imgur.com/s9egWBB.jpg"
 negative(url, 3, 0.001)
 }
