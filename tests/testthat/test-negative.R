@@ -1,6 +1,6 @@
 # Test negative
 url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
-example <- tibble(red = c(255, 252, 243, 243, 254),
+example <- dplyr::tibble(red = c(255, 252, 243, 243, 254),
                   green = c(243, 243, 240, 239, 250),
                   blue = c(227, 228, 225, 227, 238),
                   hex = c("#FFF3E3", "#FCF3E4", "#F3F0E1", "#F3EFE3", "#FEFAEE"))
@@ -14,7 +14,7 @@ test_that("negative() throws an error when expected", {
 })
 
 test_that("negative() produces accurate output", {
-  expect_true(is_tibble(negative(url, 5)))
+  expect_true(tibble::is_tibble(negative(url, 5)))
   expect_identical(colnames(negative(url, 5)), c("red", "green", "blue", "hex"))
   expect_identical(negative(url, 5), example)
 })

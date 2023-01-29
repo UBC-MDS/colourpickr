@@ -10,7 +10,7 @@ rgb2col(mat, col)
 \arguments{
 \item{mat}{matrix of RGB color codes}
 
-\item{col}{column containing RGB values; row order is red, green, blue}
+\item{col}{index of column containing RGB values; row order is red, green, blue}
 }
 \value{
 character vector of the HEX code
