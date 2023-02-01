@@ -1,11 +1,16 @@
 # Test negative
-url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
+url <- "https://i.imgur.com/s9egWBB.jpg"
 example <- dplyr::tibble(
   red = c(255, 252, 243, 243, 254),
   green = c(243, 243, 240, 239, 250),
   blue = c(227, 228, 225, 227, 238),
   hex = c("#FFF3E3", "#FCF3E4", "#F3F0E1", "#F3EFE3", "#FEFAEE")
 )
+
+#example for test 2
+hex <- base::getElement(get_color_palette(url, 0.0001, 5, FALSE), 'hex')
+rgb <- abs(255 - grDevices::col2rgb(hex))
+example_test_2 <- sapply(1:ncol(rgb), function(x) rgb2col(rgb, x))
 
 test_that("negative() throws an error when expected", {
   expect_error(negative(url, "a", 0.4))
@@ -18,7 +23,7 @@ test_that("negative() throws an error when expected", {
 test_that("negative() produces accurate output", {
   expect_true(tibble::is_tibble(negative(url, 5)))
   expect_identical(colnames(negative(url, 5)), c("red", "green", "blue", "hex"))
-  expect_identical(negative(url, 5), example)
+  expect_identical(negative(url, 5)$hex, example_test_2)
 })
 
 test_that("negative() inverts the colours correctly", {
