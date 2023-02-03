@@ -5,7 +5,6 @@
 [![R-CMD-check](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/UBC-MDS/colourpickr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/UBC-MDS/colourpickr?branch=master)
-[![.github/workflows/R-CMD-check](https://github.com/UBC-MDS/colourpickr/actions/workflows/.github/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/colourpickr/actions/workflows/.github/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # colourpickr
