@@ -4,14 +4,12 @@
 \alias{get_color_palette}
 \title{Gets the color palette of an image as a tibble}
 \usage{
-get_color_palette(img_url, limit, force_return_limit = FALSE)
+get_color_palette(img_url, limit)
 }
 \arguments{
 \item{img_url}{a character string representing the image URL}
 
 \item{limit}{the maximum number of colors to be returned}
-
-\item{force_return_limit}{forcefully update tolerance until limit number of colors are extracted}
 }
 \value{
 data.frame (tibble::tibble)
@@ -23,5 +21,5 @@ color codes and RGB values. Includes the share of each color in the image.
 }
 \examples{
 url <- "https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg"
-get_color_palette(url, 3, TRUE)
+get_color_palette(url, 3)
 }

@@ -8,10 +8,10 @@
 #' @export
 #'
 #' @examples
-#' donut("https://i.imgur.com/s9egWBB.jpg", 5)
+#' donut("https://i.imgur.com/s9egWBB.jpg", 5, plot_show = TRUE)
 donut <- function(img_url, num_clrs, plot_show = TRUE) {
   # download the dataframe of colors
-  df <- get_color_palette(img_url, 100, TRUE)
+  df <- get_color_palette(img_url, 100)
 
   # select and rename the needed columns
   df <- df[c("hex", "col_share")] |>

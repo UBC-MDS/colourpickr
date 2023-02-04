@@ -30,15 +30,14 @@ url_exists <- function(url) {
 #'
 #' @param img_url a character string representing the image URL
 #' @param limit the maximum number of colors to be returned
-#' @param force_return_limit forcefully update tolerance until limit number of colors are extracted
 #'
 #' @return data.frame (tibble::tibble)
 #' @export
 #'
 #' @examples
 #' url <- "https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg"
-#' get_color_palette(url, 3, TRUE)
-get_color_palette <- function(img_url, limit, force_return_limit = FALSE) {
+#' get_color_palette(url, 3)
+get_color_palette <- function(img_url, limit) {
   # check if image exists
   if (!url_exists(img_url)) {
     return("Error: The specified URL does not exist.")
