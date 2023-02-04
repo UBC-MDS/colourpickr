@@ -59,25 +59,24 @@ devtools::install_github("UBC-MDS/colourpickr")
 
 ## Functions
 
-`get_color_palette(img_url, tolerance, limit)`: This function extracts
-the most common colors from an image and returns them as a data frame of
-hex color codes and RGB values. The user is provided with the ability to
-set tolerance while picking colors, along with the number of colors that
-should be returned.
+`get_color_palette(img_url, limit)`: This function extracts the most
+common colors from an image and returns them as a data frame of hex
+color codes and RGB values. The user is provided with the ability to set
+the number of colors that should be returned.
 
-`donut(img_url, num_clrs, tolerance, plot_show)`: This function creates a donut
-chart with information on the most common n colors in the linked image, where n
-is the number of colors specified by the user. The user also specifies the 
-image url and the color tolerance.
+`donut(img_url, num_clrs, img_size)`: This function creates a donut
+chart with information on the most common colors in the linked image.
+The user specifies the image, the number of colors, and specifies the
+size of the resulting chart.
 
-`scatterplot(url_img, dataset, x, y, colour, threshold)`: This function
-creates a simple scatterplot using the colours select from the image
-based on a dataset of the users choosing.
+`scatterplot(url_img, dataset, x, y, colour)`: This function creates a
+simple scatterplot using the colours selected from the image based on a
+dataset of the users choosing.
 
-`negative(img_url, num_colours, threshold)`: This function extracts the
-most common colours from an image (via URL) and inverts them to retrieve
-the negative version of a colour palette, returning the associated HEX
-codes and RGB values for each colour.
+`negative(img_url, num_colours)`: This function extracts the most common
+n colours from an image (via URL) and inverts them to retrieve the
+negative version of a colour palette, returning the associated HEX codes
+and RGB values for each colour.
 
 ## Contributing
 
@@ -89,6 +88,6 @@ By contributing to this project, you agree to abide by its terms.
 
 ## License
 
-`colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan,
+`colourpycker` was created by Shaun Hutchinson, Arjun Radhakrishnan,
 Alex Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
 license.

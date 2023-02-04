@@ -26,10 +26,9 @@ url_exists <- function(url) {
 #'
 #' Extracts the most common colors, configurable through parameters, from
 #' an image specified as a URL and returns them as a data frame of hex
-#' color codes and RGB values
+#' color codes and RGB values. Includes the share of each color in the image.
 #'
 #' @param img_url a character string representing the image URL
-#' @param tolerance numeric tolerance level between 0 and 1 for color matching
 #' @param limit the maximum number of colors to be returned
 #' @param force_return_limit forcefully update tolerance until limit number of colors are extracted
 #'
@@ -38,8 +37,8 @@ url_exists <- function(url) {
 #'
 #' @examples
 #' url <- "https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg"
-#' get_color_palette(url, 0.001, 3, TRUE)
-get_color_palette <- function(img_url, tolerance, limit, force_return_limit = FALSE) {
+#' get_color_palette(url, 3, TRUE)
+get_color_palette <- function(img_url, limit, force_return_limit = FALSE) {
   # check if image exists
   if (!url_exists(img_url)) {
     return("Error: The specified URL does not exist.")
@@ -57,39 +56,11 @@ get_color_palette <- function(img_url, tolerance, limit, force_return_limit = FA
     return("Error: 'limit' must be a positive integer.")
   }
 
-  # check if tolerance is between 0 and 1
-  if (!is.numeric(tolerance) || tolerance < 0 || tolerance > 1) {
-    return("Error: 'tolerance' must be a numeric value between 0 and 1.")
-  }
-
   # Extract colors
-  color_tib <- colorfindr::get_colors(img_url,
-                                      top_n = limit,
-                                      min_share = tolerance, exclude_col = "white", get_stats = TRUE
-  )
+  colors <- colorfindr::get_colors(img_url, exclude_col = "white", get_stats = TRUE)
 
-  if (!force_return_limit) {
-    if (nrow(color_tib) < limit) {
-      return("Error: Tolerance too high. Can't return the
-            requested numbers of colors with the given tolerence.
-            The proportion of pixels for the most common colors
-             are less than the specified threshold.")
-    }
-  } else {
-    i <- 0
-    while (nrow(color_tib) < limit && i < 10) {
-      color_tib <- colorfindr::get_colors(
-        img_url,
-        top_n = limit, min_share = tolerance,
-        exclude_col = "white", get_stats = TRUE
-      )
-      tolerance <- tolerance / 10
-      i <- i + 1
-    }
-  }
-
-  # Get HEX code column as vector
-  hex <- color_tib |> dplyr::pull(col_hex)
+  # Get the colour palette HEX codes by grouping colours into n clusters
+  hex <- colorfindr::make_palette(colors, n = limit, show = FALSE)
 
   # get RGB codes from HEX codes
   rgb <- grDevices::col2rgb(hex)
@@ -101,7 +72,7 @@ get_color_palette <- function(img_url, tolerance, limit, force_return_limit = FA
 
   hex_rgb$hex <- hex
 
-  hex_rgb$col_share <- color_tib$col_share
+  hex_rgb <- dplyr::left_join(hex_rgb, colors, by = c("hex" = "col_hex"))
 
   hex_rgb
 }

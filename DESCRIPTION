@@ -16,13 +16,11 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     tibble,
-    tidyverse,
     colorfindr,
     stringr,
     ggplot2,
     grDevices,
-    httr,
     palmerpenguins,
-    rlang,
+    httr,
     dplyr
     

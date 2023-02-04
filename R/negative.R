@@ -6,36 +6,28 @@
 #'
 #' @param img_url URL of an image file
 #' @param num_colours number of colours to be extracted
-#' @param threshold minimum share of all pixels; between 0 and 1; 0 by default
 #'
 #' @return data.frame (tibble::tibble)
 #' @export
 #'
 #' @examples
-#' url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
-#' negative(url, 3, 0.001)
-negative <- function(img_url, num_colours, threshold = 0) {
+#' url <- "https://i.imgur.com/s9egWBB.jpg"
+#' negative(url, 3)
+negative <- function(img_url, num_colours) {
   # Image file must be a JPEG, PNG, TIFF, SVG or BMP
-  if (!stringr::str_detect(tolower(img_url), "\\.jpg|\\.jpeg|\\.png|\\.bmp|\\.tif|\\.svg"))
+  if (!stringr::str_detect(tolower(img_url), "\\.jpg|\\.jpeg|\\.png|\\.bmp|\\.tif|\\.svg")) {
     stop("File is not a BMP, JPEG, PNG, TIFF, or SVG.")
+  }
 
-  if (!is.numeric(num_colours))
-    stop("'num_colours' must be a numeric value.")
+  if (!is.numeric(num_colours) || num_colours <= 0) {
+    stop("'num_colours' must be a positive numeric value.")
+  }
 
-  if (!is.numeric(threshold))
-    stop("'threshold' must be a numeric value.")
+  # Extract colours - exclude black since the inverse would be white
+  colors <- colorfindr::get_colors(img_url, exclude_col = "black")
 
-  if (!dplyr::between(threshold, 0, 1))
-    stop("'threshold' must be between 0 and 1.")
-
-  # Extract colours
-  color_tib <- colorfindr::get_colors(img_url, top_n = num_colours, min_share = threshold, exclude_col = "white", get_stats = TRUE)
-
-  if (dim(color_tib)[1] == 0)
-    stop("Share of pixels of the most common colour is lower than the threshold; set a lower 'threshold' to extract.")
-
-  # Get HEX code column as vector
-  hex <- color_tib |> dplyr::pull(col_hex)
+  # Get the colour palette HEX codes by grouping colours into n clusters
+  hex <- colorfindr::make_palette(colors, n = num_colours, show = FALSE)
 
   # Extract inverted RGB codes from HEX codes
   rgb <- abs(255 - grDevices::col2rgb(hex))
@@ -70,7 +62,8 @@ negative <- function(img_url, num_colours, threshold = 0) {
 #' rgb2col(grDevices::col2rgb(c("#000C1C")))
 rgb2col <- function(mat, col) {
   grDevices::rgb(mat[1, col],
-      mat[2, col],
-      mat[3, col],
-      maxColorValue = 255)
+    mat[2, col],
+    mat[3, col],
+    maxColorValue = 255
+  )
 }
