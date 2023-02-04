@@ -121,8 +121,9 @@ After installing the package, please follow the below instructions :
 
     negative("https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg", 3)
 
-For a detailed list of examples and reference, please visit
-[here](https://ubc-mds.github.io/colourpickr/)
+For a detailed list of examples and references, please visit
+[here](https://ubc-mds.github.io/colourpickr/) for the full
+documentation.
 
 ## Contributing
 
