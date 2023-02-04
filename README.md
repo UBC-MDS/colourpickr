@@ -82,6 +82,47 @@ n colours from an image (via URL) and inverts them to retrieve the
 negative version of a colour palette, returning the associated HEX codes
 and RGB values for each colour.
 
+## Usage
+
+After installing the package, please follow the below instructions :
+
+    # Load packages
+    library(colourpickr)
+
+<br>
+
+`get_color_palette`:
+
+    get_color_palette("https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg", 3)
+
+<br>
+
+`donut`:
+
+    donut("https://i.imgur.com/s9egWBB.jpg", 3, FALSE)
+
+<br>
+
+`scatterplot`:
+
+    plot <- scatterplot(
+       "https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg",
+       palmerpenguins::penguins,
+       bill_length_mm,
+       body_mass_g,
+       species
+     )
+    plot
+
+<br>
+
+`negative`:
+
+    negative("https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg", 3)
+
+For a detailed list of examples and reference, please visit
+[here](https://ubc-mds.github.io/colourpickr/)
+
 ## Contributing
 
 Interested in contributing? Check out the [contributing
