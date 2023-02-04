@@ -14,7 +14,7 @@ test_that("negative() throws an error when expected", {
 test_that("negative() produces accurate output", {
   expect_true(tibble::is_tibble(negative(url, 5)))
   expect_identical(colnames(negative(url, 5)), c("red", "green", "blue", "hex"))
-  expect_identical(negative(url, 5), example)
+  expect_identical(negative(url, 5)$hex, example_test_2)
 })
 
 test_that("negative() inverts the colours correctly", {

@@ -1,6 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/UBC-MDS/colourpickr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/UBC-MDS/colourpickr?branch=master)
 <!-- badges: end -->
 
 # colourpickr
@@ -43,7 +47,7 @@ our knowledge. Some examples of such packages are as follows:
   GGPlot or anothe package to graph.
 
 - [Imgpalr](https://github.com/leonawicz/imgpalr): This package allows
-  you to create ualitative, sequential or divergent color palettes from
+  you to create qualitative, sequential or divergent color palettes from
   an image. Again, this function does not have data visualization built
   in to it.
 
@@ -88,6 +92,6 @@ By contributing to this project, you agree to abide by its terms.
 
 ## License
 
-`colourpycker` was created by Shaun Hutchinson, Arjun Radhakrishnan,
-Alex Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
+`colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan, Alex
+Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
 license.

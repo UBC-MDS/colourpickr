@@ -13,9 +13,3 @@ test_that("get_color_palette returns error message for negative limit", {
 test_that("get_color_palette returns a data frame when run with valid inputs", {
   expect_true(is.data.frame(get_color_palette("https://visit.ubc.ca/wp-content/uploads/2019/04/plantrip_header-2800x1000_2x.jpg", 3)))
 })
-
-
-
-
-
-
