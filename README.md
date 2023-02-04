@@ -1,6 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/UBC-MDS/colourpickr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/UBC-MDS/colourpickr?branch=master)
 <!-- badges: end -->
 
 # colourpickr
@@ -43,14 +47,14 @@ our knowledge. Some examples of such packages are as follows:
   GGPlot or anothe package to graph.
 
 - [Imgpalr](https://github.com/leonawicz/imgpalr): This package allows
-  you to create ualitative, sequential or divergent color palettes from
+  you to create qualitative, sequential or divergent color palettes from
   an image. Again, this function does not have data visualization built
   in to it.
 
 ## Installation
 
 You can install the development version of colourpickr from
-[GitHub](https://github.com/UBC-MDS/colourpickr) with:
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -59,16 +63,16 @@ devtools::install_github("UBC-MDS/colourpickr")
 
 ## Functions
 
-`get_color_palette(img_url, tolerance, limit, force_return_limit = FALSE)`: This function extracts
-the most common colors from an image and returns them as a data frame of
-hex color codes and RGB values. The user is provided with the ability to
-set tolerance while picking colors, along with the number of colors that
-should be returned.
+`get_color_palette(img_url, tolerance, limit, force_return_limit = FALSE)`:
+This function extracts the most common colors from an image and returns
+them as a data frame of hex color codes and RGB values. The user is
+provided with the ability to set tolerance while picking colors, along
+with the number of colors that should be returned.
 
-`donut(img_url, num_clrs, tolerance, plot_show)`: This function creates a donut
-chart with information on the most common n colors in the linked image, where n
-is the number of colors specified by the user. The user also specifies the
-image url and the color tolerance.
+`donut(img_url, num_clrs, tolerance, plot_show)`: This function creates
+a donut chart with information on the most common n colors in the linked
+image, where n is the number of colors specified by the user. The user
+also specifies the image url and the color tolerance.
 
 `scatterplot(url_img, dataset, x, y, colour, threshold)`: This function
 creates a simple scatterplot using the colours select from the image
@@ -89,6 +93,6 @@ By contributing to this project, you agree to abide by its terms.
 
 ## License
 
-`colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan,
-Alex Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
+`colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan, Alex
+Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
 license.
