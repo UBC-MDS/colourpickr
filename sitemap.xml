@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/404.html</loc>
   </url>
   <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>/CONTRIBUTING.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/articles/colourpickr-vignette.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/articles/index.html</loc>
   </url>
   <url>
-    <loc>/reference/donut.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/authors.html</loc>
   </url>
   <url>
-    <loc>/reference/get_color_palette.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/index.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/reference/donut.html</loc>
   </url>
   <url>
-    <loc>/reference/negative.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/reference/get_color_palette.html</loc>
   </url>
   <url>
-    <loc>/reference/rgb2col.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/scatterplot.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/reference/negative.html</loc>
   </url>
   <url>
-    <loc>/reference/url_exists.html</loc>
+    <loc>https://ubc-mds.github.io/colourpickr/reference/rgb2col.html</loc>
+  </url>
+  <url>
+    <loc>https://ubc-mds.github.io/colourpickr/reference/scatterplot.html</loc>
+  </url>
+  <url>
+    <loc>https://ubc-mds.github.io/colourpickr/reference/url_exists.html</loc>
   </url>
 </urlset>
