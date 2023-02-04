@@ -138,4 +138,4 @@ Interested in contributing? Check out the [contributing guidelines](https://gith
 
 ## License
 
-`colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan, Alex Taciuk, and Lauren Zung. It is licensed under the terms of the MIT license.
+`colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan, Alex Taciuk, and Lauren Zung. It is licensed under the terms of the GPLv3 license.
