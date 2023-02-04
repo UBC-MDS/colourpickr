@@ -28,3 +28,4 @@ Imports:
     rlang,
     dplyr
 VignetteBuilder: knitr
+URL: https://ubc-mds.github.io/colourpickr/
