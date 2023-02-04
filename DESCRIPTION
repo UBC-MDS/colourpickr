@@ -27,6 +27,7 @@ Imports:
     httr,
     palmerpenguins,
     rlang,
-    dplyr
+    dplyr,
+    devtools
 VignetteBuilder: knitr
 URL: https://ubc-mds.github.io/colourpickr/
