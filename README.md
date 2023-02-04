@@ -5,6 +5,7 @@
 [![R-CMD-check](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/UBC-MDS/colourpickr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/UBC-MDS/colourpickr?branch=master)
+[![.github/workflows/R-CMD-check](https://github.com/UBC-MDS/colourpickr/actions/workflows/.github/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/colourpickr/actions/workflows/.github/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # colourpickr
@@ -68,10 +69,10 @@ common colors from an image and returns them as a data frame of hex
 color codes and RGB values. The user is provided with the ability to set
 the number of colors that should be returned.
 
-`donut(img_url, num_clrs, img_size)`: This function creates a donut
+`donut(img_url, num_clrs, plot_show)`: This function creates a donut
 chart with information on the most common colors in the linked image.
-The user specifies the image, the number of colors, and specifies the
-size of the resulting chart.
+The user specifies the image, the number of colors, and specifies
+whether to show the plot or not.
 
 `scatterplot(url_img, dataset, x, y, colour)`: This function creates a
 simple scatterplot using the colours selected from the image based on a
