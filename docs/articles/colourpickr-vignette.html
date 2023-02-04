@@ -108,23 +108,20 @@ by a URL and returns them as a data frame of hex codes and RGB values.
 The required parameters are img_url, tolerance, and limit, with
 force_return_limit being an optional parameter.</p>
 <p>Parameters:<br><code>img_url</code> : A character string representing the image
-URL<br><code>tolerance</code> : Numeric tolerance level between 0 and 1 for
-color matching<br><code>limit</code> : The maximum number of colors to be returned<br><code>force_return_limit</code> : Forcefully update tolerance until the
-limit number of colors are extracted</p>
+URL<br><code>limit</code> : The maximum number of colors to be returned</p>
 <p>In the example below, we extract the 2 prominent colors from the
 example image above.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">colours_df</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu"><a href="../reference/get_color_palette.html">get_color_palette</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg"</span>,</span>
-<span>                    <span class="fl">0.001</span>,</span>
-<span>                    <span class="fl">2</span>,</span>
-<span>                    <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>                    <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">colours_df</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 5</span></span></span>
-<span><span class="co">#&gt;     red green  blue hex     col_share</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   107   159   181 #6B9FB5   0.001<span style="text-decoration: underline;">10</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   138   165   156 #8AA59C   0.001<span style="text-decoration: underline;">03</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 6</span></span></span>
+<span><span class="co">#&gt;     red green  blue hex     col_freq col_share</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   107   159   181 #6B9FB5     <span style="text-decoration: underline;">3</span>072  0.001<span style="text-decoration: underline;">10</span> </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   100   125   156 #647D9C     <span style="text-decoration: underline;">1</span>494  0.000<span style="text-decoration: underline;">534</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     9    18    13 #09120D      561  0.000<span style="text-decoration: underline;">200</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="donut">
@@ -135,12 +132,11 @@ common colors in the linked image. The user specifies the image, and the
 number of colors, and specifies the size of the resulting chart.</p>
 <p>Parameters:<br><code>img_url</code> : string of the url of the image that you want to
 pull colors from<br><code>num_clrs</code> : int of the number of colors you want to pull
-from the image<br><code>tolerance</code> : float of tolerance between 0 and 1 for color
-matching, default 0.001<br><code>plot_show</code> : if TRUE will print the plot, default TRUE</p>
+from the image<br><code>plot_show</code> : if TRUE will print the plot, default TRUE</p>
 <p>In the example below, we plot a donut chart of the color composition
 of the image.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/donut.html">donut</a></span><span class="op">(</span><span class="st">"https://i.imgur.com/s9egWBB.jpg"</span>, <span class="fl">3</span>, <span class="fl">0.0005</span>, <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/donut.html">donut</a></span><span class="op">(</span><span class="st">"https://i.imgur.com/s9egWBB.jpg"</span>, <span class="fl">3</span>, <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="colourpickr-vignette_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 </div>
 <div class="section level3">
@@ -152,15 +148,16 @@ the image based on a data set of the users choosing.</p>
 <p>Parameters:<br><code>img_url</code> URL of an image file<br><code>dataset</code> data.frame or tibble<br><code>x</code> unquoted column name to plot on the x-axis from data
 data.frame or tibble<br><code>y</code> unquoted column name to plot on the y-axis from data
 data.frame or tibble<br><code>colour</code> unquoted column name to plot as the colour from data
-data.frame or tibble<br><code>threshold</code> threshold minimum share of all pixels; between 0
-and 1</p>
+data.frame or tibble</p>
 <p>In the example below, we visualize a scatter plot for the
 palmerpenguins data set with colors extracted from the image.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/scatterplot.html">scatterplot</a></span><span class="op">(</span></span>
 <span>   <span class="st">"https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg"</span>,</span>
 <span>   <span class="fu">palmerpenguins</span><span class="fu">::</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/reference/penguins.html" class="external-link">penguins</a></span>,</span>
-<span>   <span class="va">bill_length_mm</span>, <span class="va">body_mass_g</span>, <span class="va">species</span>, <span class="fl">0</span></span>
+<span>   <span class="va">bill_length_mm</span>,</span>
+<span>   <span class="va">body_mass_g</span>,</span>
+<span>   <span class="va">species</span></span>
 <span> <span class="op">)</span></span>
 <span><span class="va">plot</span></span>
 <span><span class="co">#&gt; Warning: Removed 2 rows containing missing values (`geom_point()`).</span></span></code></pre></div>
@@ -175,18 +172,18 @@ URL) and inverts them to retrieve the negative version of a colour
 palette, returning the associated HEX codes and RGB values for each
 colour.</p>
 <p>Parameters:<br><code>img_url</code> : A character string representing the image
-URL<br><code>tolerance</code> : Numeric tolerance level between 0 and 1 for
-color matching<br><code>limit</code> : The maximum number of colors to be returned</p>
+URL<br><code>limit</code> : The maximum number of colors to be returned</p>
 <p>In the example below, we extract the 2 prominent colors from the
 example image above and invert them.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg"</span></span>
-<span><span class="fu"><a href="../reference/negative.html">negative</a></span><span class="op">(</span><span class="va">url</span>, <span class="fl">2</span>, <span class="fl">0.001</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 4</span></span></span>
+<span><span class="fu"><a href="../reference/negative.html">negative</a></span><span class="op">(</span><span class="va">url</span>, <span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 4</span></span></span>
 <span><span class="co">#&gt;     red green  blue hex    </span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   148    96    74 #94604A</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   117    90    99 #755A63</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   155   130    99 #9B8263</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>   246   237   242 #F6EDF2</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
