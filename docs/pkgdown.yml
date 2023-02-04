@@ -1,0 +1,10 @@
+pandoc: 2.19.2
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles:
+  colourpickr-vignette: colourpickr-vignette.html
+last_built: 2023-02-04T05:22Z
+urls:
+  reference: https://ubc-mds.github.io/colourpickr/reference
+  article: https://ubc-mds.github.io/colourpickr/articles
+
