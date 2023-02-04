@@ -4,7 +4,7 @@
 \alias{scatterplot}
 \title{Create a two-dimensional scatterplot based on the colours of the image}
 \usage{
-scatterplot(img_url, dataset, x, y, colour, threshold = 0)
+scatterplot(img_url, dataset, x, y, colour)
 }
 \arguments{
 \item{img_url}{URL of an image file}
@@ -16,8 +16,6 @@ scatterplot(img_url, dataset, x, y, colour, threshold = 0)
 \item{y}{unquoted column name to plot on the y-axis from data data.frame or tibble}
 
 \item{colour}{unquoted column name to plot as the colour from data data.frame or tibble}
-
-\item{threshold}{threshold minimum share of all pixels; between 0 and 1}
 }
 \value{
 A geom_point ggplot
@@ -27,9 +25,7 @@ Creates a simple scatterplot using the colours selected from the image,
 plotting two features from a dataset of the users choosing.
 }
 \examples{
-scatterplot(
-  "https://i.imgur.com/s9egWBB.jpg",
-  palmerpenguins::penguins,
-  bill_length_mm, body_mass_g, species, 0
-)
+scatterplot('https://i.imgur.com/s9egWBB.jpg',
+palmerpenguins::penguins,
+bill_length_mm, body_mass_g, species)
 }
