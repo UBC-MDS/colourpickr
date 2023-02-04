@@ -45,18 +45,14 @@ The function extracts the most common colors from an image specified by a URL an
 
 Parameters:  
 `img_url` : A character string representing the image URL  
-`tolerance` : Numeric tolerance level between 0 and 1 for color matching  
 `limit` : The maximum number of colors to be returned  
-`force_return_limit` : Forcefully update tolerance until the limit number of colors are extracted
 
 In the example below, we extract the 2 prominent colors from the example image above.
 
 ```{r}
 colours_df <- 
   get_color_palette("https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg",
-                    0.001,
-                    2,
-                    TRUE)
+                    3)
 colours_df
 ```
 
@@ -67,14 +63,13 @@ This function creates a donut chart with information on the most common colors i
 
 Parameters:  
 `img_url` :  string of the url of the image that you want to pull colors from  
-`num_clrs` : int of the number of colors you want to pull from the image   
-`tolerance` :  float of tolerance between 0 and 1 for color matching, default 0.001   
+`num_clrs` : int of the number of colors you want to pull from the image  
 `plot_show` :  if TRUE will print the plot, default TRUE  
 
 In the example below, we plot a donut chart of the color composition of the image.
 
 ```{r}
-donut("https://i.imgur.com/s9egWBB.jpg", 3, 0.0005, FALSE)
+donut("https://i.imgur.com/s9egWBB.jpg", 3, FALSE)
 
 ```
 
@@ -89,7 +84,6 @@ Parameters:
 `x` unquoted column name to plot on the x-axis from data data.frame or tibble  
 `y` unquoted column name to plot on the y-axis from data data.frame or tibble  
 `colour` unquoted column name to plot as the colour from data data.frame or tibble  
-`threshold` threshold minimum share of all pixels; between 0 and 1  
 
 
 In the example below, we visualize a scatter plot for the palmerpenguins data set with colors extracted from the image.
@@ -98,7 +92,9 @@ In the example below, we visualize a scatter plot for the palmerpenguins data se
 plot <- scatterplot(
    "https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg",
    palmerpenguins::penguins,
-   bill_length_mm, body_mass_g, species, 0
+   bill_length_mm,
+   body_mass_g,
+   species
  )
 plot
 
@@ -110,14 +106,13 @@ This function extracts the most common colours from an image (via URL) and inver
 
 Parameters:  
 `img_url` : A character string representing the image URL  
-`tolerance` : Numeric tolerance level between 0 and 1 for color matching  
 `limit` : The maximum number of colors to be returned  
 
 In the example below, we extract the 2 prominent colors from the example image above and invert them.
 
 ```{r}
 url <- "https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg"
-negative(url, 2, 0.001)
+negative(url, 3)
 
 ```
 
