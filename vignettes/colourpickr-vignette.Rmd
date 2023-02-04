@@ -1,0 +1,124 @@
+---
+title: "colourpickr-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{colourpickr-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Welcome to colourpickr!
+
+The `colourpickr` package is made for anyone looking to make their visualization more vibrant by applying colours they can extract from real-life images! Users can easily extract the most prominent colours available in an image and apply that to their visualizations. 
+
+```{r load_namespace, include=FALSE}
+devtools::load_all()
+```
+
+To use colourpickr in a project, we will first import the package as shown below:
+
+```{r setup}
+# Load packages
+library(colourpickr)
+```
+
+## Functions
+
+`colourpickr` currently exposes four functions that give the user the flexibility needed to extract colours from an image and apply those in their visualization.
+
+## Example Image
+We will be using the below image to demonstrate the various functions of the `colourpickr` package. 
+
+![Aerial view of UBC](https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg){width=650px}
+
+## `get_color_palette`
+
+The function extracts the most common colors from an image specified by a URL and returns them as a data frame of hex codes and RGB values. The required parameters are img_url, tolerance, and limit, with force_return_limit being an optional parameter.
+
+Parameters:  
+`img_url` : A character string representing the image URL  
+`tolerance` : Numeric tolerance level between 0 and 1 for color matching  
+`limit` : The maximum number of colors to be returned  
+`force_return_limit` : Forcefully update tolerance until the limit number of colors are extracted
+
+In the example below, we extract the 2 prominent colors from the example image above.
+
+```{r}
+colours_df <- 
+  get_color_palette("https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg",
+                    0.001,
+                    2,
+                    TRUE)
+colours_df
+```
+
+
+## `donut`
+
+This function creates a donut chart with information on the most common colors in the linked image. The user specifies the image, and the number of colors, and specifies the size of the resulting chart.
+
+Parameters:  
+`img_url` :  string of the url of the image that you want to pull colors from  
+`num_clrs` : int of the number of colors you want to pull from the image   
+`tolerance` :  float of tolerance between 0 and 1 for color matching, default 0.001   
+`plot_show` :  if TRUE will print the plot, default TRUE  
+
+In the example below, we plot a donut chart of the color composition of the image.
+
+```{r}
+donut("https://i.imgur.com/s9egWBB.jpg", 3, 0.0005, FALSE)
+
+```
+
+
+## `scatterplot`
+
+This function creates a scatterplot using the colours selected from the image based on a data set of the users choosing.
+
+Parameters:  
+`img_url` URL of an image file  
+`dataset` data.frame or tibble  
+`x` unquoted column name to plot on the x-axis from data data.frame or tibble  
+`y` unquoted column name to plot on the y-axis from data data.frame or tibble  
+`colour` unquoted column name to plot as the colour from data data.frame or tibble  
+`threshold` threshold minimum share of all pixels; between 0 and 1  
+
+
+In the example below, we visualize a scatter plot for the palmerpenguins data set with colors extracted from the image.
+
+```{r}
+plot <- scatterplot(
+   "https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg",
+   palmerpenguins::penguins,
+   bill_length_mm, body_mass_g, species, 0
+ )
+plot
+
+```
+
+## `negative`
+
+This function extracts the most common colours from an image (via URL) and inverts them to retrieve the negative version of a colour palette, returning the associated HEX codes and RGB values for each colour.
+
+Parameters:  
+`img_url` : A character string representing the image URL  
+`tolerance` : Numeric tolerance level between 0 and 1 for color matching  
+`limit` : The maximum number of colors to be returned  
+
+In the example below, we extract the 2 prominent colors from the example image above and invert them.
+
+```{r}
+url <- "https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg"
+negative(url, 2, 0.001)
+
+```
+
+
