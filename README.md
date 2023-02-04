@@ -136,5 +136,5 @@ By contributing to this project, you agree to abide by its terms.
 ## License
 
 `colourpickr` was created by Shaun Hutchinson, Arjun Radhakrishnan, Alex
-Taciuk, and Lauren Zung. It is licensed under the terms of the MIT
+Taciuk, and Lauren Zung. It is licensed under the terms of the GPLv3
 license.
