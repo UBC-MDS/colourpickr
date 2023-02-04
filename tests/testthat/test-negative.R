@@ -1,7 +1,7 @@
 # Test negative
 url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
 # Example
-hex <- base::getElement(get_color_palette(url, 0.0001, 5, FALSE), 'hex')
+hex <- base::getElement(get_color_palette(url, 5), 'hex')
 rgb <- abs(255 - grDevices::col2rgb(hex))
 example_test <- sapply(1:ncol(rgb), function(x) rgb2col(rgb, x))
 
