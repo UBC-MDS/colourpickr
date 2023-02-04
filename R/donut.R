@@ -2,17 +2,16 @@
 #'
 #' @param img_url string of the url of the image that you want to pull colors from
 #' @param num_clrs int of the number of colors you want to pull from the image
-#' @param tolerance float of tolerance between 0 and 1 for color matching, default 0.001
 #' @param plot_show if TRUE will print the plot, default TRUE
 #'
 #' @return a ggplot donut chart of the n most common colors in the image (user specified)
 #' @export
 #'
 #' @examples
-#' donut("https://i.imgur.com/s9egWBB.jpg", 5, 0.0005)
-donut <- function(img_url, num_clrs, tolerance = 0.001, plot_show = TRUE) {
+#' donut("https://i.imgur.com/s9egWBB.jpg", 5, plot_show = TRUE)
+donut <- function(img_url, num_clrs, plot_show = TRUE) {
   # download the dataframe of colors
-  df <- get_color_palette(img_url, tolerance = tolerance, 100, TRUE)
+  df <- get_color_palette(img_url, 100)
 
   # select and rename the needed columns
   df <- df[c("hex", "col_share")] |>

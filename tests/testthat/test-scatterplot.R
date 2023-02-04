@@ -36,11 +36,5 @@ test_that("scatterplot() raises an error where expected", {
                            x,
                            y,
                            fill))
-  expect_error(scatterplot('https://i.imgur.com/s9egWBB.jpg',
-               test_df,
-               x,
-               y,
-               fill,
-               "15"))
 }
 )

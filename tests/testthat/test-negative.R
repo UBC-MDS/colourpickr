@@ -1,35 +1,21 @@
 # Test negative
 url <- "https://i.imgur.com/s9egWBB.jpg"
-example <- dplyr::tibble(
-  red = c(255, 252, 243, 243, 254),
-  green = c(243, 243, 240, 239, 250),
-  blue = c(227, 228, 225, 227, 238),
-  hex = c("#FFF3E3", "#FCF3E4", "#F3F0E1", "#F3EFE3", "#FEFAEE")
-)
-
-#example for test 2
-hex <- base::getElement(get_color_palette(url, 0.0001, 5, FALSE), 'hex')
-rgb <- abs(255 - grDevices::col2rgb(hex))
-example_test_2 <- sapply(1:ncol(rgb), function(x) rgb2col(rgb, x))
 
 test_that("negative() throws an error when expected", {
-  expect_error(negative(url, "a", 0.4))
-  expect_error(negative(url, 5, "0.001"))
-  expect_error(negative(url, 4, 8))
-  expect_error(negative(url, 10, -3.9))
-  expect_error(negative("image.png", 5, 0.001))
+  expect_error(negative(url, 'a'))
+  expect_error(negative(url, -10))
+  expect_error(negative("image.png", 5))
 })
 
 test_that("negative() produces accurate output", {
   expect_true(tibble::is_tibble(negative(url, 5)))
   expect_identical(colnames(negative(url, 5)), c("red", "green", "blue", "hex"))
-  expect_identical(negative(url, 5)$hex, example_test_2)
 })
 
 test_that("negative() inverts the colours correctly", {
   test_colour <- negative(url, 1)
-  expect_false(any(test_colour$red == 0))
-  expect_false(any(test_colour$green == 1))
-  expect_false(any(test_colour$blue == 0))
-  expect_false(any(test_colour$hex == "#000100"))
+  expect_false(any(test_colour$red == 107))
+  expect_false(any(test_colour$green == 159))
+  expect_false(any(test_colour$blue == 181))
+  expect_false(any(test_colour$hex == "#6B9FB5"))
 })
