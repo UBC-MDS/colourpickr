@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/UBC-MDS/colourpickr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/UBC-MDS/colourpickr?branch=master)
+[![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 <!-- badges: end -->
 
 # colourpickr
@@ -84,6 +85,52 @@ dataset of the users choosing.
 n colours from an image (via URL) and inverts them to retrieve the
 negative version of a colour palette, returning the associated HEX codes
 and RGB values for each colour.
+
+
+## Usage
+ After installing the package, please follow the below instructions : 
+
+```
+# Load packages
+library(colourpickr)
+```
+<br>
+
+`get_color_palette`:
+
+```
+get_color_palette("https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg", 3)
+```
+<br>
+
+`donut`:
+
+```
+donut("https://i.imgur.com/s9egWBB.jpg", 3, FALSE)
+```
+<br>
+
+`scatterplot`:
+
+```
+plot <- scatterplot(
+   "https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg",
+   palmerpenguins::penguins,
+   bill_length_mm,
+   body_mass_g,
+   species
+ )
+plot
+```
+<br>
+
+`negative`:
+
+```
+negative("https://raw.githubusercontent.com/UBC-MDS/colourpycker/add_image/images/UBC_Aerial.jpg", 3)
+```
+
+For a detailed list of examples and references, please visit [here](https://ubc-mds.github.io/colourpickr/) for the full documentation.
 
 
 ## Contributing
