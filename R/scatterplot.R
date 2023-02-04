@@ -21,19 +21,23 @@ scatterplot <- function(img_url, dataset, x, y, colour) {
     stop("'img_url' must be a link (not a path).")
   }
 
-  if (!stringr::str_detect(tolower(img_url), ".jpg|.jpeg|.png|.svg"))
+  if (!stringr::str_detect(tolower(img_url), ".jpg|.jpeg|.png|.svg")) {
     stop("'img_url' must be a direct link to an image file")
+  }
 
   # Get colour palatte based on number of colours in dataset
   colour_palatte <- get_color_palette(img_url,
                                       dplyr::n_distinct(dplyr::select(dataset, {{colour}})))
 
   # Build scatterplot based off of image colour palatte and dataset
-  scatter <- ggplot2::ggplot(data = dataset,
-                             ggplot2::aes(x = {{x}},
-             y = {{y}},
-             color = {{colour}})) +
+  scatter <- ggplot2::ggplot(
+    data = dataset,
+    ggplot2::aes(
+      x = {{ x }},
+      y = {{ y }},
+      color = {{ colour }}
+    )
+  ) +
     ggplot2::scale_color_manual(values = colour_palatte$hex) +
     ggplot2::geom_point()
-
 }
