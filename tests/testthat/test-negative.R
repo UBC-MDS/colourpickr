@@ -1,9 +1,9 @@
 # Test negative
 url <- "https://masterdatascience.ubc.ca/sites/default/files/styles/banner_image_large/public/media-images/fos-datascience-healthineers_1440x512-fina-webl.jpg?itok=rBc6RLF6"
-example <- dplyr::tibble(red = c(255, 250, 255, 81, 185),
-                  green = c(243, 224, 127, 78, 175),
-                  blue = c(227, 201, 105, 71, 163),
-                  hex = c("#FFF3E3", "#FAE0C9", "#FF7F69", "#514E47", "#B9AFA3"))
+example <- dplyr::tibble(red = c(255, 251, 254, 86, 169),
+                  green = c(243, 225, 185, 76, 165),
+                  blue = c(227, 200, 156, 64, 156),
+                  hex = c("#FFF3E3", "#FBE1C8", "#FEB99C", "#564C40", "#A9A59C"))
 
 test_that("negative() throws an error when expected", {
   expect_error(negative(url, 'a'))
