@@ -88,10 +88,10 @@
 <div class="section level2">
 <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
 </h2>
-<p><code>get_color_palette(img_url, tolerance, limit, force_return_limit = FALSE)</code>: This function extracts the most common colors from an image and returns them as a data frame of hex color codes and RGB values. The user is provided with the ability to set tolerance while picking colors, along with the number of colors that should be returned.</p>
-<p><code>donut(img_url, num_clrs, tolerance, plot_show)</code>: This function creates a donut chart with information on the most common n colors in the linked image, where n is the number of colors specified by the user. The user also specifies the image url and the color tolerance.</p>
-<p><code>scatterplot(url_img, dataset, x, y, colour, threshold)</code>: This function creates a simple scatterplot using the colours select from the image based on a dataset of the users choosing.</p>
-<p><code>negative(img_url, num_colours, threshold)</code>: This function extracts the most common colours from an image (via URL) and inverts them to retrieve the negative version of a colour palette, returning the associated HEX codes and RGB values for each colour.</p>
+<p><code>get_color_palette(img_url, limit)</code>: This function extracts the most common colors from an image and returns them as a data frame of hex color codes and RGB values. The user is provided with the ability to set the number of colors that should be returned.</p>
+<p><code>donut(img_url, num_clrs, plot_show)</code>: This function creates a donut chart with information on the most common colors in the linked image. The user specifies the image, the number of colors, and specifies whether to show the plot or not.</p>
+<p><code>scatterplot(url_img, dataset, x, y, colour)</code>: This function creates a simple scatterplot using the colours selected from the image based on a dataset of the users choosing.</p>
+<p><code>negative(img_url, num_colours)</code>: This function extracts the most common n colours from an image (via URL) and inverts them to retrieve the negative version of a colour palette, returning the associated HEX codes and RGB values for each colour.</p>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
@@ -143,6 +143,7 @@
 <ul class="list-unstyled">
 <li><a href="https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/UBC-MDS/colourpickr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://app.codecov.io/gh/UBC-MDS/colourpickr?branch=master" class="external-link"><img src="https://codecov.io/gh/UBC-MDS/colourpickr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/UBC-MDS/colourpickr/actions/workflows/.github/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/UBC-MDS/colourpickr/actions/workflows/.github/workflows/R-CMD-check.yaml/badge.svg" alt=".github/workflows/R-CMD-check"></a></li>
 </ul>
 </div>
 

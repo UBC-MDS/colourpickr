@@ -48,7 +48,7 @@ then stored in a table as HEX codes and RGB values.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">negative</span><span class="op">(</span><span class="va">img_url</span>, <span class="va">num_colours</span>, threshold <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">negative</span><span class="op">(</span><span class="va">img_url</span>, <span class="va">num_colours</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -59,10 +59,6 @@ then stored in a table as HEX codes and RGB values.</p>
 
 <dt>num_colours</dt>
 <dd><p>number of colours to be extracted</p></dd>
-
-
-<dt>threshold</dt>
-<dd><p>minimum share of all pixels; between 0 and 1; 0 by default</p></dd>
 
 </dl></div>
     <div id="value">
@@ -75,11 +71,13 @@ then stored in a table as HEX codes and RGB values.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://i.imgur.com/s9egWBB.jpg"</span></span></span>
-<span class="r-in"><span><span class="fu">negative</span><span class="op">(</span><span class="va">url</span>, <span class="fl">3</span>, <span class="fl">0.001</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
+<span class="r-in"><span><span class="fu">negative</span><span class="op">(</span><span class="va">url</span>, <span class="fl">3</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     red green  blue hex    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   148    96    74 #94604A</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>   155   130    99 #9B8263</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>   255   245   255 #FFF5FF</span>
 </code></pre></div>
     </div>
   </div>

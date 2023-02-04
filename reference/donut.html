@@ -44,7 +44,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">donut</span><span class="op">(</span><span class="va">img_url</span>, <span class="va">num_clrs</span>, tolerance <span class="op">=</span> <span class="fl">0.001</span>, plot_show <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">donut</span><span class="op">(</span><span class="va">img_url</span>, <span class="va">num_clrs</span>, plot_show <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -55,10 +55,6 @@
 
 <dt>num_clrs</dt>
 <dd><p>int of the number of colors you want to pull from the image</p></dd>
-
-
-<dt>tolerance</dt>
-<dd><p>float of tolerance between 0 and 1 for color matching, default 0.001</p></dd>
 
 
 <dt>plot_show</dt>
@@ -74,7 +70,7 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">donut</span><span class="op">(</span><span class="st">"https://i.imgur.com/s9egWBB.jpg"</span>, <span class="fl">5</span>, <span class="fl">0.0005</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">donut</span><span class="op">(</span><span class="st">"https://i.imgur.com/s9egWBB.jpg"</span>, <span class="fl">5</span>, plot_show <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="donut-1.png" alt="" width="700" height="433"></span>
 <span class="r-plt img"><img src="donut-2.png" alt="" width="700" height="433"></span>
 </code></pre></div>
